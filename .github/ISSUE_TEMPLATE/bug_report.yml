@@ -1,0 +1,71 @@
+name: Bug report
+description: Something behaves differently than it should
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing this. If you're reporting a **security vulnerability**,
+        stop here and use private vulnerability reporting on the **Security** tab
+        instead — see our [security policy](https://github.com/twetch-inc/.github/blob/main/SECURITY.md).
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you do, and what did you get?
+      placeholder: I called `posts().thread(id)` and got an empty vec for a thread that has 12 replies.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected instead
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: The smaller the repro, the faster this gets fixed. A failing test is ideal.
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Crate/package version, or the commit SHA if you're on a branch.
+      placeholder: "0.1.0 / a1b2c3d"
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, and toolchain version if relevant.
+      placeholder: macOS 15.5, rustc 1.83.0
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or error output
+      description: Pasted here it will be formatted as code — no backticks needed.
+      render: shell
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I've searched existing issues for this
+          required: true
+        - label: There are no keys, seed phrases, tokens or other secrets in what I've pasted above
+          required: true
